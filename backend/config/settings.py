@@ -8,9 +8,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # =====================================
 SECRET_KEY = 'secret-key'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'breathe-esg1-59hl.onrender.com',
+    '.vercel.app',
+    '127.0.0.1',
+    'localhost',
+]
 
 
 # =====================================
@@ -35,7 +40,6 @@ INSTALLED_APPS = [
     'ingestion',
     'emissions',
     'reviews',
-
 ]
 
 
@@ -168,6 +172,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS
 # =====================================
 CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_CREDENTIALS = True
+
+
+# =====================================
+# CSRF
+# =====================================
+CSRF_TRUSTED_ORIGINS = [
+
+    'https://*.vercel.app',
+
+]
 
 
 # =====================================
